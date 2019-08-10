@@ -32,6 +32,7 @@ class MoreFunctionActivity : BaseActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.freshman_activity_more)
+        common_toolbar.init("更多功能")
         dismissQR()
         initRecView()
         freshman_more_layout.setOnClickListener(this)
