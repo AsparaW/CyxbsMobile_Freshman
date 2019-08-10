@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_process_layout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:orientation="horizontal"
+>
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <View
+                android:layout_width="2dp"
+                android:layout_height="21dp"
+                android:background="#aec0ff"
+                android:layout_marginLeft="6dp"/>
+        <ImageView
+                android:id="@+id/iv_block_decoration"
+                android:layout_width="14dp"
+                android:layout_height="13dp"
+                android:src="@drawable/freshman_ic_block_decoration"
+                android:layout_marginTop="21dp"/>
+
+        <View android:layout_width="15dp"
+              android:layout_height="2dp"
+              android:background="#aec0ff"
+              android:layout_toRightOf="@id/iv_block_decoration"
+              android:layout_marginTop="26dp"/>
+        <View android:layout_width="2dp"
+              android:layout_height="match_parent"
+              android:background="#aec0ff"
+              android:layout_marginLeft="6dp"
+              android:layout_marginTop="34dp"/>
+    </RelativeLayout>
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:paddingBottom="15dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="17dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="13dp"
+                android:background="@drawable/freshman_process_background">
+
+            <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#333333"
+            />
+
+            <ImageView
+                    android:id="@+id/iv_more_process"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="19dp"
+                    android:background="@drawable/freshman_ic_expand_more_black_24dp"/>
+
+            <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_message"
+                    android:layout_marginTop="15dp"
+                    />
+
+            <ImageView
+                    android:id="@+id/iv_photo"
+                    android:layout_width="265dp"
+                    android:layout_height="126dp"
+                    android:layout_below="@id/tv_detail"
+                    android:layout_marginTop="12dp"
+                    android:maxHeight="10dp"
+                    android:scaleType="centerCrop"
+                    />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

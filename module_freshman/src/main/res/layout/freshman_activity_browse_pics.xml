@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:id="@+id/fl_photo_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.BrowsePicsActivity"
+        android:background="#000000"
+>
+    <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/iv_big_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:longClickable="true"
+            />
+
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_scenes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+    >
+    </androidx.viewpager.widget.ViewPager>
+    <TextView
+            android:id="@+id/tv_pic_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="22dp"
+            android:layout_marginBottom="22dp"/>
+    <ImageView
+            android:id="@+id/iv_download_pic"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/freshman_ic_download"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="23dp"/>
+
+</FrameLayout>

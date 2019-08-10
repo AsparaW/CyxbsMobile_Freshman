@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFF7FF">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+    >
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="19dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="23dp"
+                android:background="@drawable/freshman_process_background">
+
+            <TextView
+                    android:id="@+id/tv_cqupt"
+                    android:layout_width="125dp"
+                    android:layout_height="18dp"
+                    android:textSize="15sp"
+                    android:layout_marginTop="23dp"
+                    android:textColor="#333333"
+
+            />
+            <TextView
+                    android:id="@+id/tv_copy"
+                    android:layout_width="53dp"
+                    android:layout_height="15dp"
+                    android:textColor="#7390ff"
+                    android:text="复制地址"
+                    android:textSize="13sp"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignParentRight="true"
+            />
+
+            <TextView
+
+                    android:id="@+id/tv_cqupt_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:textSize="14sp"
+                    android:layout_below="@id/tv_cqupt"
+                    android:layout_marginTop="9dp"
+            />
+
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/tv_advise_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推荐线路"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_advise_route"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:nestedScrollingEnabled="false">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
