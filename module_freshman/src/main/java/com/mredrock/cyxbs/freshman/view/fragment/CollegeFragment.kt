@@ -105,6 +105,7 @@ class CollegeFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSea
 
     //搜索框联想数据点击后指定item置顶
     override fun onSearchItemClick(name: String) {
+        et_college.setText("")
         popupWindow.dismiss()
         var index: Int = 0
         for (i in 0 until mList.size) {

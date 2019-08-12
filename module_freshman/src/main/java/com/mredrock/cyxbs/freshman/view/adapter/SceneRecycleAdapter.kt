@@ -10,6 +10,7 @@ import com.mredrock.cyxbs.common.utils.extensions.setAvatarImageFromUrl
 import com.mredrock.cyxbs.common.utils.extensions.setImageFromUrl
 import com.mredrock.cyxbs.freshman.R
 import com.mredrock.cyxbs.freshman.bean.SceneBean
+import com.mredrock.cyxbs.freshman.url.IMAGE
 import com.mredrock.cyxbs.freshman.view.activity.BrowsePicsActivity
 import kotlinx.android.synthetic.main.freshman_recycle_item_photo.view.*
 import org.jetbrains.anko.startActivity
@@ -29,7 +30,7 @@ class SceneRecycleAdapter(val list: List<SceneBean.TextBean.MessageBean>, val co
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.itemView.iv_scence.setImageFromUrl(list[position].photo)
+        holder.itemView.iv_scence.setImageFromUrl("${IMAGE}${list[position].photo}")
         holder.itemView.tv_scence_name.text = list[position].name
         holder.itemView.iv_scence.setOnClickListener {
             //查看大图

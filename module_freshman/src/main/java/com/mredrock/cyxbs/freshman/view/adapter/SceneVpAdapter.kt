@@ -8,9 +8,8 @@ import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.mredrock.cyxbs.common.BaseApp
 import com.mredrock.cyxbs.common.utils.extensions.setImageFromUrl
-import com.mredrock.cyxbs.freshman.R
-import com.mredrock.cyxbs.freshman.bean.SceneBean
-import kotlin.math.log
+import com.mredrock.cyxbs.freshman.url.IMAGE
+
 
 /**
  * Created by tk on 2019/8/6
@@ -24,7 +23,7 @@ class SceneVpAdapter(val list: ArrayList<String>) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val imageView = ImageView(BaseApp.context)
-        imageView.setImageFromUrl(list[position])
+        imageView.setImageFromUrl("${IMAGE}${list[position]}")
         container.addView(imageView)
         return imageView
 

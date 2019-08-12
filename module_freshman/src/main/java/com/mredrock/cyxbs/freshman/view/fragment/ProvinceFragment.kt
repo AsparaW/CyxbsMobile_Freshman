@@ -102,7 +102,7 @@ class ProvinceFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSe
     //点击老乡群搜索联想item，置顶相应老乡群
     override fun onSearchItemClick(name: String) {
         popupWindow.dismiss()
-
+        et_province.setText("")
         var index: Int = 0
         for (i in 0 until mList.size) {
             if (mList[i].name.equals(name)) {

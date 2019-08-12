@@ -14,6 +14,7 @@ import com.mredrock.cyxbs.common.utils.extensions.setImageFromUrl
 import com.mredrock.cyxbs.freshman.R
 import com.mredrock.cyxbs.freshman.bean.SceneBean
 import com.mredrock.cyxbs.freshman.presenter.ScenePresenter
+import com.mredrock.cyxbs.freshman.url.IMAGE
 import com.mredrock.cyxbs.freshman.view.activity.BrowsePicsActivity
 import com.mredrock.cyxbs.freshman.view.adapter.SceneRecycleAdapter
 import com.mredrock.cyxbs.freshman.view.iview.ISceneView
@@ -42,7 +43,7 @@ class SceneFragment : Fragment() ,ISceneView {
 
     override fun showMap(title: String?, photo: String?) {
         tv_map_name.text = title
-        iv_cqupt_map_2d.setImageFromUrl(photo)
+        iv_cqupt_map_2d.setImageFromUrl("${IMAGE}${photo}")
 
         iv_cqupt_map_2d.setOnClickListener {
             //显示大图

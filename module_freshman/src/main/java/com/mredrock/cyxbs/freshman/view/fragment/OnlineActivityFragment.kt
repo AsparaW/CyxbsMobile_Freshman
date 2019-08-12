@@ -8,9 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupWindow
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mredrock.cyxbs.common.utils.extensions.doPermissionAction
 import com.mredrock.cyxbs.common.utils.extensions.getScreenWidth
@@ -21,6 +19,7 @@ import com.mredrock.cyxbs.freshman.presenter.DownloadPresenter
 import com.mredrock.cyxbs.freshman.presenter.OnlineActivityPresenter
 import com.mredrock.cyxbs.freshman.reduceTransparency
 import com.mredrock.cyxbs.freshman.resetTransparency
+import com.mredrock.cyxbs.freshman.url.IMAGE
 import com.mredrock.cyxbs.freshman.view.adapter.ActivityRecycleAdapter
 import com.mredrock.cyxbs.freshman.view.iview.IDownloadView
 import com.mredrock.cyxbs.freshman.view.iview.IOnlineView
@@ -70,7 +69,7 @@ class OnlineActivityFragment : Fragment(), IOnlineView, IDownloadView, ActivityR
     override fun onItemClick(photo: String?, message: String?) {
         //弹出二维码dailog
         val view = LayoutInflater.from(context).inflate(R.layout.freshman_dialog_qr_code, null)
-        view.iv_qr_code.setImageFromUrl(photo)
+        view.iv_qr_code.setImageFromUrl("${IMAGE}$photo")
         view.tv_activity_message.text = message
         dialog = builder.setView(view).setCancelable(true).show()
 
