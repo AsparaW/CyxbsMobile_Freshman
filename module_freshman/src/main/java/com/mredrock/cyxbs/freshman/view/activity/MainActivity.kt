@@ -13,7 +13,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        zidiyi.setData("传媒","10%","10%")
+        zidiyi.setData("传媒","10%","90%")
 
 
     }

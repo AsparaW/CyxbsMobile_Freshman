@@ -17,6 +17,7 @@ import com.mredrock.cyxbs.freshman.R
 import com.mredrock.cyxbs.freshman.presenter.DownloadPresenter
 import com.mredrock.cyxbs.freshman.reduceTransparency
 import com.mredrock.cyxbs.freshman.resetTransparency
+import com.mredrock.cyxbs.freshman.url.IMAGE
 import com.mredrock.cyxbs.freshman.view.adapter.SceneVpAdapter
 import com.mredrock.cyxbs.freshman.view.iview.IDownloadView
 import kotlinx.android.synthetic.main.freshman_activity_browse_pics.*
@@ -114,7 +115,7 @@ class BrowsePicsActivity : BaseActivity(), View.OnLongClickListener, IDownloadVi
     fun requestForAccess() {
         doPermissionAction(Manifest.permission.WRITE_EXTERNAL_STORAGE) {
             doAfterGranted {
-                showingUrl.let { it1 -> presenter.download(it1) }
+                "${IMAGE}$showingUrl".let { it1 -> presenter.download(it1) }
             }
             doAfterRefused {
                 toast("拒绝授权，该功能无法使用")
