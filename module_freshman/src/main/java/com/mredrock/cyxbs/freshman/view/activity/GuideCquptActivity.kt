@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.mredrock.cyxbs.common.ui.BaseActivity
 import com.mredrock.cyxbs.freshman.R
-import com.mredrock.cyxbs.freshman.view.adapter.GuidePagerAdapter
+import com.mredrock.cyxbs.freshman.view.adapter.PagerAdapter
 import com.mredrock.cyxbs.freshman.view.fragment.RouteFragment
 import com.mredrock.cyxbs.freshman.view.fragment.SceneFragment
 import kotlinx.android.synthetic.main.freshman_activity_guide_cqupt.*
@@ -16,7 +16,7 @@ class GuideCquptActivity : BaseActivity() {
     override val isFragmentActivity: Boolean
         get() = true
 
-    lateinit var vpAdapter: GuidePagerAdapter
+    lateinit var vpAdapter: PagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +24,7 @@ class GuideCquptActivity : BaseActivity() {
         common_toolbar.init("入学流程")
         initFragments()
         tl_guide.setupWithViewPager(vp_guide)
+
     }
 
     fun initFragments() {
@@ -31,7 +32,7 @@ class GuideCquptActivity : BaseActivity() {
         val fm = supportFragmentManager
         list.add(RouteFragment())
         list.add(SceneFragment())
-        vpAdapter = GuidePagerAdapter(fm, list)
+        vpAdapter = PagerAdapter(arrayOf("公交路线","校园风光"),fm,list)
         vp_guide.adapter = vpAdapter
 
     }

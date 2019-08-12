@@ -16,7 +16,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/freshman_textview3"
+            android:id="@+id/freshman_schoolitem_name"
             app:layout_constraintTop_toTopOf="@+id/freshman_imageview"
             app:layout_constraintBottom_toBottomOf="@+id/freshman_imageview" android:textColor="#333333"
             android:textSize="16sp" tools:text="物品" app:layout_constraintStart_toEndOf="@+id/freshman_checkbox_item"

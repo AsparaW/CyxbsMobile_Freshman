@@ -41,10 +41,10 @@
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="17dp"
+                android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:paddingLeft="13dp"
-                android:background="@drawable/freshman_process_background">
+                android:background="@drawable/freshman_admin_process_bg">
 
             <TextView
                     android:id="@+id/tv_message"

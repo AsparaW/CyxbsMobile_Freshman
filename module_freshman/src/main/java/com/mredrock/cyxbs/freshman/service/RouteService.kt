@@ -11,5 +11,5 @@ import retrofit2.http.Url
 interface RouteService {
     //入学流程
     @GET
-    fun getRouteBean(@Url url: String): Observable<RouteBean>
+    fun getRouteObservable(@Url url: String): Observable<RouteBean>
 }

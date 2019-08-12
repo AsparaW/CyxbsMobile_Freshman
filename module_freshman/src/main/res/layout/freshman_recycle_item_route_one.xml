@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/freshman_ic_item_background"
+                android:background="@drawable/freshman_college_num_bg"
                 android:paddingLeft="19dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="20dp"
@@ -23,7 +23,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/freshman_ic_expand_more_black_24dp"/>
 
     <TextView

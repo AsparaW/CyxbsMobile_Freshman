@@ -10,10 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mredrock.cyxbs.common.utils.LogUtils
 import com.mredrock.cyxbs.freshman.R
-import com.mredrock.cyxbs.freshman.view.activity.CommunicateActivity
-import com.mredrock.cyxbs.freshman.view.activity.GuideCquptActivity
-import com.mredrock.cyxbs.freshman.view.activity.IndexActivity
-import com.mredrock.cyxbs.freshman.view.activity.MoreFunctionActivity
+import com.mredrock.cyxbs.freshman.view.activity.*
 
 
 class IndexRecycleAdapter(val activity: IndexActivity) :
@@ -79,21 +76,25 @@ init {
                 if (position == 0) {
 //                    holder.textView1.text = "入学必备"
 //                    holder.textView2.text = "报道必备、宿舍用品、学习用具"
+                    goto(SchoolItemActivity().javaClass)
                 } else if (position == 1) {
 //                    holder.textView1.text = "指路重邮"
 //                    holder.textView2.text = "重邮线路、重邮地图"
+                    goto(GuideCquptActivity().javaClass)
                 } else if (position == 2) {
 //                    holder.textView1.text = "入学流程"
 //                    holder.textView2.text = "入学步骤、入学地点"
-                    goto(GuideCquptActivity().javaClass)
+                    goto(AdmissionProcessActivity().javaClass)
                     LogUtils.d("1","1")
                 } else if (position == 3) {
 //                    holder.textView1.text = "新生课表"
 //                    holder.textView2.text = " "
 
+
                 } else if (position == 4) {
 //                    holder.textView1.text = "校园指引"
 //                    holder.textView2.text = "宿舍、快递地点指引"
+
                 } else if (position== 5) {
 //                    holder.textView1.text = "线上交流"
 //                    holder.textView2.text = "老乡群、专业群"

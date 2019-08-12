@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#EFF7FF"
+              android:paddingTop="15dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              >
+    <EditText
+            android:id="@+id/et_province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/freshman_ic_search"
+            android:drawablePadding="15dp"
+            android:hint="找不到老乡群？试试搜索"
+            android:textSize="15sp"
+            android:padding="15dp"
+            android:maxLength="10"
+            android:background="@drawable/freshman_search_background"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hometown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -11,6 +11,7 @@ import com.mredrock.cyxbs.common.utils.extensions.setImageFromUrl
 import com.mredrock.cyxbs.common.utils.extensions.visible
 import com.mredrock.cyxbs.freshman.R
 import com.mredrock.cyxbs.freshman.bean.AdminProBean
+import com.mredrock.cyxbs.freshman.url.IMAGE
 import kotlinx.android.synthetic.main.freshman_recycle_item_process.view.*
 import kotlinx.android.synthetic.main.freshman_recycle_item_route_two.view.*
 import org.jetbrains.anko.backgroundResource
@@ -47,7 +48,7 @@ class AdminProRecycleAdapter(val adminProBean: AdminProBean) :
             else -> {
                 holder.itemView.tv_message.text = textBean?.title
                 holder.itemView.tv_detail.text = textBean?.detail
-                holder.itemView.iv_photo.setImageFromUrl(textBean?.photo)
+                holder.itemView.iv_photo.setImageFromUrl("${IMAGE}${textBean?.photo}")
                 if (openedPosition == position) {
                     holder.itemView.iv_more_process.backgroundResource = R.drawable.freshman_ic_expand_less_black_24dp
                     holder.itemView.tv_detail.visible()

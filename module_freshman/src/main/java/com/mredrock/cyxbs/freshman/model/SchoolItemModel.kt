@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable
 class SchoolItemModel(val url: String, val listener: OnloadModelListener) : BaseModel{
 
     lateinit var disposable: Disposable
-    fun getProcess() {
+    fun getItem() {
         val itemService = ApiGenerator.getApiService(ItemService::class.java)
         disposable = itemService.getItemBean(url)
             .setSchedulers()

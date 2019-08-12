@@ -1,28 +1,42 @@
 package com.mredrock.cyxbs.freshman.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.mredrock.cyxbs.common.network.ApiGenerator
+import androidx.fragment.app.Fragment
 import com.mredrock.cyxbs.common.ui.BaseActivity
-import com.mredrock.cyxbs.common.utils.extensions.setSchedulers
 import com.mredrock.cyxbs.freshman.R
-import com.mredrock.cyxbs.freshman.service.SearchCollegeService
-import org.jetbrains.anko.toast
+import com.mredrock.cyxbs.freshman.view.adapter.PagerAdapter
+import com.mredrock.cyxbs.freshman.view.fragment.CollegeFragment
+import com.mredrock.cyxbs.freshman.view.fragment.ProvinceFragment
+import com.mredrock.cyxbs.freshman.view.fragment.OnlineActivityFragment
+import kotlinx.android.synthetic.main.freshman_activity_communicate.*
+
 
 class CommunicateActivity : BaseActivity() {
     override val isFragmentActivity: Boolean
         get() = false
 
+    lateinit var mAdapter: PagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.freshman_activity_communicate)
         common_toolbar.init("线上交流")
-        val searchCollegeService = ApiGenerator.getApiService(SearchCollegeService::class.java)
-        searchCollegeService.getCollegeNum("http://129.28.185.138:9025/zsqy/select/college","计算机")
-            .setSchedulers()
-            .subscribe{
-                it.text?.get(0)?.name?.let { it1 -> toast(it1) }
-            }
+        initFragment()
+        tl_communicate.setupWithViewPager(vp_communicate)
+
+
     }
+
+    fun initFragment() {
+        val list = ArrayList<Fragment>()
+        val fm = supportFragmentManager
+        list.apply {
+            add(CollegeFragment())
+            add(ProvinceFragment())
+            add(OnlineActivityFragment())
+        }
+        mAdapter = PagerAdapter(arrayOf("学院群", "老乡群", "线上交流"), fm, list)
+        vp_communicate.adapter = mAdapter
+    }
+
+
 }
