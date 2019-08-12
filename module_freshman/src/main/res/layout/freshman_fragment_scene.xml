@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="255dp"
                 android:layout_margin="15dp"
-                android:background="@drawable/freshman_process_background"
+                android:background="@drawable/freshman_copy_address_bg"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:paddingTop="17dp"

@@ -5,7 +5,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:padding="18dp"
-                android:background="@drawable/freshman_process_background">
+                android:background="@drawable/freshman_copy_address_bg">
     <ImageView
             android:id="@+id/iv_activity_photo"
             android:layout_width="match_parent"

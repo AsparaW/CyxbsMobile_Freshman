@@ -22,7 +22,7 @@
                 android:paddingLeft="19dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="23dp"
-                android:background="@drawable/freshman_process_background">
+                android:background="@drawable/freshman_copy_address_bg">
 
             <TextView
                     android:id="@+id/tv_cqupt"

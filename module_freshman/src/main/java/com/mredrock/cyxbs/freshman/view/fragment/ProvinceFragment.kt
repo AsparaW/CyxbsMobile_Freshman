@@ -50,8 +50,8 @@ class ProvinceFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSe
         mPresenter.loadContent(HOME_TOWN)
         disposable = Observable.create(ObservableOnSubscribe<String>() {
             et_province.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) =
-                    it.onNext(s.toString())
+
+                override fun afterTextChanged(s: Editable?) = it.onNext(s.toString())
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
@@ -76,15 +76,16 @@ class ProvinceFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSe
                     view,
                     activity?.getScreenWidth()!! - activity?.dpToPx(30f)!!.toInt(),
                     ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-                    .apply {
-                        isFocusable = true
-                        showAsDropDown(et_province)
+                ).apply {
+                    isFocusable = true
+                    showAsDropDown(et_province)
 
-                    }
+                }
             }
     }
 
+
+    //展示老乡群数据
     override fun showContent(list: List<CommunicateBean.TextBean>) {
         mList = list
         val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
@@ -98,12 +99,13 @@ class ProvinceFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSe
         }
     }
 
+    //点击老乡群搜索联想item，置顶相应老乡群
     override fun onSearchItemClick(name: String) {
         popupWindow.dismiss()
 
         var index: Int = 0
-        for (i in 0 until mList.size){
-            if (mList[i].name.equals(name)){
+        for (i in 0 until mList.size) {
+            if (mList[i].name.equals(name)) {
                 index = i
                 break
             }

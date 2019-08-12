@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:background="@drawable/freshman_ic_college_item_bk"
+             android:background="@drawable/freshman_college_num_bg"
 
              >
     <TextView

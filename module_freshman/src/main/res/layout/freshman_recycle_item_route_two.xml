@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:background="@drawable/freshman_ic_item_background"
+                android:background="@drawable/freshman_college_num_bg"
                 android:paddingLeft="19dp"
                 android:paddingBottom="20dp"
                 android:paddingRight="20dp"

@@ -49,21 +49,17 @@ class CollegeFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSea
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //et_cotent.setOnFocusChangeListener(this)
         mPresenter.loadContent(COLLEGE_URL)
+
+        //监听输入框，获取联想数据
         disposable = Observable.create(ObservableOnSubscribe<String>() {
             et_college.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    it.onNext(s.toString())
-                }
 
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                override fun afterTextChanged(s: Editable?) = it.onNext(s.toString())
 
-                }
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-                }
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             })
         }).debounce(500, TimeUnit.MILLISECONDS)
             .filter {
@@ -78,22 +74,20 @@ class CollegeFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSea
                 val view = LayoutInflater.from(context).inflate(R.layout.freshman_popupwindow_search_result, null)
                 view.rv_serach_result.apply {
                     adapter = it.text.let { SearchRecycleAdapter(it, context, this@CollegeFragment) }
-
                     layoutManager = LinearLayoutManager(context)
                 }
                 popupWindow = PopupWindow(
                     view,
                     activity?.getScreenWidth()!! - activity?.dpToPx(30f)!!.toInt(),
                     ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-                    .apply {
-                        isFocusable = true
-                        showAsDropDown(et_college)
-
-                    }
+                ).apply {
+                    isFocusable = true
+                    showAsDropDown(et_college)
+                }
             }
     }
 
+    //展示学院群
     override fun showContent(list: List<CommunicateBean.TextBean>) {
         mList = list
         //添加分割线
@@ -108,6 +102,8 @@ class CollegeFragment : Fragment(), ICommunicateView, SearchRecycleAdapter.OnSea
         }
     }
 
+
+    //搜索框联想数据点击后指定item置顶
     override fun onSearchItemClick(name: String) {
         popupWindow.dismiss()
         var index: Int = 0
