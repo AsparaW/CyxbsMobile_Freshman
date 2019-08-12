@@ -1,18 +1,29 @@
 package com.mredrock.cyxbs.freshman.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupWindow
-import com.mredrock.cyxbs.common.BaseApp
-import com.mredrock.cyxbs.common.component.start
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.mredrock.cyxbs.common.network.ApiGenerator
 import com.mredrock.cyxbs.common.ui.BaseActivity
+import com.mredrock.cyxbs.freshman.BuildConfig
+
 import com.mredrock.cyxbs.freshman.R
+//import com.mredrock.cyxbs.freshman.service.SearchService
+import com.mredrock.cyxbs.freshman.view.adapter.CommunicateAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.freshman_popwindow_download.view.*
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.freshman_recycle_item_content.view.*
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+
 
 class MainActivity : BaseActivity() {
     override val isFragmentActivity: Boolean
@@ -21,31 +32,37 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button.setOnClickListener{
-            show()
-        }
+
+
+//        val logInterceptor = HttpLoggingInterceptor()
+//        if (BuildConfig.DEBUG) {
+//            //显示日志
+//            logInterceptor.level = HttpLoggingInterceptor.Level.BODY
+//        } else {
+//            logInterceptor.level = HttpLoggingInterceptor.Level.NONE
+//        }
+//        val okHttpClient =   OkHttpClient.Builder()
+//            .connectTimeout(80000, TimeUnit.SECONDS)//设置超时时间
+//            .retryOnConnectionFailure(true)
+//        okHttpClient.addInterceptor(logInterceptor)
+
+//        val mService = ApiGenerator.getApiService(SearchService::class.java)
+//        val disposable = mService.getCollegeNum("http://129.28.185.138:9025/zsqy/select/college","计算机")
+//            .setSchedulers()
+//            .subscribe({
+//                Log.d("testcollege",it.info)
+//            },{
+//                Log.d("excption", it.message)
+//            })
+
+
+
 
 
     }
     fun show(){
-        val contentView = LayoutInflater.from(BaseApp.context).inflate(R.layout.freshman_popwindow_download, null)
-        val rootView = LayoutInflater.from(BaseApp.context).inflate(R.layout.activity_main, null)
-        val popupWindow = PopupWindow(
-            contentView,
-            (resources.displayMetrics.widthPixels * 0.95).toInt(),
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-        popupWindow.isFocusable = true
-        popupWindow.animationStyle = R.style.PopWindow
-        popupWindow.showAtLocation(rootView, Gravity.BOTTOM, 0, 50)
-
-        contentView.bt_download.setOnClickListener {
-            //showingUrl.let { it1 -> presenter.download(it1) }
-            toast("开始下载")
-        }
-        contentView.bt_down_cancle.setOnClickListener {
-            popupWindow.dismiss()
-        }
+        val dialog2 =  AlertDialog.Builder(this);
+        dialog2.setTitle("提示").setMessage("确认删除？").setPositiveButton("确定", null).setNegativeButton("取消", null).show();
 
     }
 }

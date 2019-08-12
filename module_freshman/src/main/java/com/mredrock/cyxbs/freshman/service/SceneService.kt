@@ -12,5 +12,5 @@ import retrofit2.http.Url
 interface SceneService {
     //入学流程
     @GET
-    fun getSceneBean(@Url url: String): Observable<SceneBean>
+    fun getSceneObservable(@Url url: String): Observable<SceneBean>
 }

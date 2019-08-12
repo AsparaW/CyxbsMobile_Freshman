@@ -12,12 +12,11 @@ import android.widget.PopupWindow
 import androidx.viewpager.widget.ViewPager
 import com.mredrock.cyxbs.common.BaseApp
 import com.mredrock.cyxbs.common.ui.BaseActivity
-import com.mredrock.cyxbs.common.utils.extensions.doPermissionAction
-import com.mredrock.cyxbs.common.utils.extensions.gone
-import com.mredrock.cyxbs.common.utils.extensions.setImageFromUrl
-import com.mredrock.cyxbs.common.utils.extensions.visible
+import com.mredrock.cyxbs.common.utils.extensions.*
 import com.mredrock.cyxbs.freshman.R
 import com.mredrock.cyxbs.freshman.presenter.DownloadPresenter
+import com.mredrock.cyxbs.freshman.reduceTransparency
+import com.mredrock.cyxbs.freshman.resetTransparency
 import com.mredrock.cyxbs.freshman.view.adapter.SceneVpAdapter
 import com.mredrock.cyxbs.freshman.view.iview.IDownloadView
 import kotlinx.android.synthetic.main.freshman_activity_browse_pics.*
@@ -91,15 +90,15 @@ class BrowsePicsActivity : BaseActivity(), View.OnLongClickListener, IDownloadVi
     override fun onLongClick(v: View?): Boolean {
         //弹出下载窗口
         val contentView = LayoutInflater.from(BaseApp.context).inflate(R.layout.freshman_popwindow_download, null)
-        val rootView = fl_photo_content
-        val popupWindow = PopupWindow(
-            contentView,
-            (resources.displayMetrics.widthPixels * 0.95).toInt(),
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-        popupWindow.isFocusable = true
-        popupWindow.animationStyle = R.style.PopWindow
-        popupWindow.showAtLocation(rootView, Gravity.BOTTOM, 0, 50)
+        reduceTransparency()
+        val popupWindow =
+            PopupWindow(contentView, (getScreenWidth() * 0.95).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+                .apply {
+                    animationStyle = R.style.PopWindow
+                    isFocusable = true
+                    setOnDismissListener { resetTransparency() }
+                    showAtLocation(fl_photo_content, Gravity.BOTTOM, 0, 50)
+                }
 
         contentView.bt_download.setOnClickListener {
             requestForAccess()
@@ -108,7 +107,6 @@ class BrowsePicsActivity : BaseActivity(), View.OnLongClickListener, IDownloadVi
         contentView.bt_down_cancle.setOnClickListener {
             popupWindow.dismiss()
         }
-
         return true
     }
 
@@ -116,8 +114,6 @@ class BrowsePicsActivity : BaseActivity(), View.OnLongClickListener, IDownloadVi
     fun requestForAccess() {
         doPermissionAction(Manifest.permission.WRITE_EXTERNAL_STORAGE) {
             doAfterGranted {
-                //测试数据
-                //showingUrl = "http://ww1.sinaimg.cn/large/006nwaiFly1g2lw2ys8r9j31z4140grd.jpg"
                 showingUrl.let { it1 -> presenter.download(it1) }
             }
             doAfterRefused {

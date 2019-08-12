@@ -9,9 +9,8 @@ import com.mredrock.cyxbs.freshman.view.iview.IAdminProView
  * Created by tk on 2019/8/8
  */
 class AdminProPresenter(var iAdminProView: IAdminProView?) : BasePresenter {
-    val url: String = "http://129.28.185.138:9025/zsqy/json/2"
 
-    val processModel = ProcessModel(url, object : OnloadModelListener {
+    val processModel = ProcessModel(object : OnloadModelListener {
         override fun <T> success(t: T) {
             val adminProBean = t as AdminProBean
             iAdminProView?.showProcess(adminProBean)
@@ -23,7 +22,6 @@ class AdminProPresenter(var iAdminProView: IAdminProView?) : BasePresenter {
     })
 
     fun loadProcess() {
-        //iAdminProView?.showDialog()
         processModel.getProcess()
 
     }

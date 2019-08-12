@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 
 /**
  * Created by tk on 2019/8/9
- * 指路重邮的viewpager适配器
+ *
  */
-class GuidePagerAdapter(val fm: FragmentManager, val listFragment: ArrayList<Fragment>) : FragmentStatePagerAdapter(fm) {
-    val titles = arrayOf("公交路线", "校园风光")
+class PagerAdapter(val title: Array<String>, val fm: FragmentManager, val listFragment: ArrayList<Fragment>) : FragmentStatePagerAdapter(fm) {
+
 
     override fun getItem(position: Int): Fragment = listFragment[position]
 
@@ -17,7 +17,7 @@ class GuidePagerAdapter(val fm: FragmentManager, val listFragment: ArrayList<Fra
 
     override fun getPageTitle(position: Int): CharSequence {
         //给viewpager的每个界面设置title
-        return titles[position]
+        return title[position]
     }
 
 }

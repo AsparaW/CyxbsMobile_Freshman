@@ -11,5 +11,5 @@ import retrofit2.http.Url
 interface ProcessService{
     //入学流程
     @GET
-    fun getProcessBean(@Url url: String): Observable<AdminProBean>
+    fun getProcessObservable(@Url url: String): Observable<AdminProBean>
 }

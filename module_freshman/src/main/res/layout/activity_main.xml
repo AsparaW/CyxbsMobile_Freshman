@@ -6,10 +6,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.MainActivity" tools:ignore="ResourceName">
-
-    <Button
-            android:id="@+id/button"
+    <!--<EditText-->
+            <!--android:id="@+id/edit_veiw"-->
+            <!--android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="test"/>
+            android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 </FrameLayout>

@@ -50,7 +50,7 @@ class SceneFragment : Fragment() ,ISceneView {
             context?.startActivity<BrowsePicsActivity>("photoes" to list)
         }
 
-        testRecycle()
+
 
     }
 
@@ -64,11 +64,12 @@ class SceneFragment : Fragment() ,ISceneView {
 
     }
 
-    fun testRecycle(){
-        val list = listOf<SceneBean.TextBean.MessageBean>()
-        sRecycleAdapter = SceneRecycleAdapter(list,activity)
-        rv_school_photos.adapter = sRecycleAdapter
-        val manager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        rv_school_photos.layoutManager = manager
-    }
+    //测试数据
+//    fun testRecycle(){
+//        val list = listOf<SceneBean.TextBean.MessageBean>()
+//        sRecycleAdapter = SceneRecycleAdapter(list,activity)
+//        rv_school_photos.adapter = sRecycleAdapter
+//        val manager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//        rv_school_photos.layoutManager = manager
+//    }
 }

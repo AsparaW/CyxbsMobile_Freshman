@@ -11,7 +11,7 @@ import com.mredrock.cyxbs.freshman.view.iview.IRouteView
  * Created by tk on 2019/8/9
  */
 class RoutePresenter(var iRouteView: IRouteView?) : BasePresenter {
-    val url: String = "http://129.28.185.138:9025/zsqy/json/5"
+
     var listener = object : OnloadModelListener {
         override fun <T> success(t: T) {
             val routeBean = t as RouteBean
@@ -37,7 +37,7 @@ class RoutePresenter(var iRouteView: IRouteView?) : BasePresenter {
 
     }
 
-    val routeModel = RouteModel(url, listener)
+    val routeModel = RouteModel(listener)
 
     fun loadRoute() {
         routeModel.getRoute()

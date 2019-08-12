@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/freshman_ic_college_item_bk">
+    <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="暂时没有你想要的群号"
+            android:textColor="#ff0000"
+            android:padding="10dp"
+            android:gravity="center_horizontal"/>
+
+</FrameLayout>

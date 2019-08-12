@@ -3,7 +3,7 @@ package com.mredrock.cyxbs.freshman.bean
 /**
  * Created by tk on 2019/8/10
  */
-class CollegeNumBean {
+class CommunicateBean {
 
     /**
      * code : 200
@@ -15,7 +15,7 @@ class CollegeNumBean {
     var info: String? = null
     var text: List<TextBean>? = null
 
-    class TextBean {
+     class TextBean {
         /**
          * name : 学院
          * data : 11111

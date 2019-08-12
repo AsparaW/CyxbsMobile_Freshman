@@ -32,12 +32,13 @@ class SceneRecycleAdapter(val list: List<SceneBean.TextBean.MessageBean>, val co
         holder.itemView.iv_scence.setImageFromUrl("http://ww1.sinaimg.cn/large/006nwaiFly1g2lw2ys8r9j31z4140grd.jpg")
         holder.itemView.tv_scence_name.text = "测试"
         holder.itemView.iv_scence.setOnClickListener {
+            //测试数据
             //val urlList = list.map { it.photo }
-            val urlList = ArrayList<String>()
-            for(i in 1..10){
-                urlList.add("http://ww1.sinaimg.cn/large/006nwaiFly1g2lw2ys8r9j31z4140grd.jpg")
-            }
-            context?.startActivity<BrowsePicsActivity>("photoes" to urlList, "pos" to holder.adapterPosition)
+//            val urlList = ArrayList<String>()
+//            for(i in 1..10){
+//                urlList.add("http://ww1.sinaimg.cn/large/006nwaiFly1g2lw2ys8r9j31z4140grd.jpg")
+//            }
+            context?.startActivity<BrowsePicsActivity>("photoes" to list, "pos" to holder.adapterPosition)
         }
     }
 
